@@ -1,6 +1,6 @@
 Module
   name: strmed_spriteviewer
-  description: StrmEd spriteviewer
+  description: StrmEd Spriteviewer
   author: Summ
   sandboxed: true
   scripts: [ spriteviewer ]

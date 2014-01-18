@@ -2,15 +2,16 @@
   Icon Credits to: http://p.yusukekamiyamane.com/
 ]]
 
-Version = '0.1 alpha'
+strmedVersion = '0.1 alpha'
 
-StrmEd = { 
+StrmEd = {
   modules = { }
 }
 
 local loadmodules = {
   'interface',
-  'spriteviewer'
+  'spriteviewer',
+  'signaturecheck'
 }
 
 local scheduledLogMessages = { }
@@ -77,7 +78,7 @@ function StrmEd.unloadModules()
 end
 
 function StrmEd.init()
-  StrmEd.log(tr('[[ StrmEd %s by Summ ]]', Version), LogColors.Event)
+  StrmEd.log(tr('[[ StrmEd %s by Summ ]]', strmedVersion), LogColors.Event)
   StrmEd.log('== StrmEd starting up.', LogColors.Event)
   StrmEd.discoverModules()
   StrmEd.loadModules()

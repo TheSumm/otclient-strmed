@@ -9,7 +9,7 @@ Sprite < UISprite
   background: #ff00ff
   $on:
     background: alpha
-    
+
 ChangeViewButton < Button
   margin-top: 5
   width: 75
@@ -33,7 +33,7 @@ MainWindow
     anchors.left: parent.left
     margin-top: 3
     height: 20
-  
+
   TextEdit
     id: jumpOffsetText
     anchors.left: prev.right
@@ -41,7 +41,7 @@ MainWindow
     margin-left: 5
     focusable: false
     @onClick: self:setFocusable(true) self:focus()
-    
+
   Button
     size: 40 20
     !text: tr('Go')
@@ -50,13 +50,13 @@ MainWindow
     @onClick: jumpOffset()
 
   SpriteView
-  
-  ChangeViewButton 
+
+  ChangeViewButton
     id: buttonPrev
     !text: tr('<< Prev')
     anchors.top: spriteView.bottom
     anchors.left: spriteView.left
-    
+
   Label
     id: spriteViewLabel
     anchors.top: prev.top
@@ -67,7 +67,7 @@ MainWindow
     text-align: center
     color: white
     height: 22
-    
+
   ChangeViewButton
     id: buttonNext
     !text: tr('Next >>')

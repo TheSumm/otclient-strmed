@@ -1,0 +1,8 @@
+Module
+  name: strmed_signaturecheck
+  description: StrmEd Signature Check
+  author: Summ
+  sandboxed: true
+  scripts: [ signaturecheck ]
+  @onLoad: init()
+  @onUnload: terminate()

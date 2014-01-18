@@ -1,12 +1,15 @@
 Module
   name: strmed
-  description: Object Editor for OTClient
+  description: StrmEd - Object Editor for OTClient
   author: Summ
-  sandboxed: true
+  sandbox: true
   autoload: true
-  autoload-priority: 9000
-  scripts: [ strmed ]
-  dependecies:
-    - strmed_lib
-  @onLoad: StrmEd.init()
+  autoload-priority: 8000
+
+  @onLoad: |
+    dofile 'utils'
+    dofile 'consts'
+    dofile 'strmed'
+    StrmEd.init()
+
   @onUnload: StrmEd.terminate()

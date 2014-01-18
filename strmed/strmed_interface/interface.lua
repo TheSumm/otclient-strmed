@@ -21,6 +21,16 @@ function init()
     onProtocolVersionChange = onProtocolVersionChange
   })
 
+  editorWindow.onKeyPress = function(self, keyCode, keyboardModifiers)
+    if not (keyboardModifiers == KeyboardCtrlModifier and keyCode == KeyC) then return false end
+
+    local label = logBuffer:getFocusedChild()
+    if not label or not label:hasSelection() then return false end
+
+    g_window.setClipboardText(label:getSelection())
+    return true
+  end
+
   if g_game.isOnline() then
     onGameStart()
   end

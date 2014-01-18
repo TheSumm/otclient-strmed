@@ -1,0 +1,9 @@
+Module
+  name: strmed_lib
+  description: Some lib files
+  author: Summ
+  autoload: true
+  autoload-priority: 8000
+  @onLoad: |
+    dofile 'utils'
+    dofile 'consts'

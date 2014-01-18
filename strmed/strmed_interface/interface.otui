@@ -1,0 +1,73 @@
+WidgetButton < TopButton
+  width: 25
+  margin: 2 0
+  $first:
+    margin-left: 4
+
+LogLabel < UILabel
+  font: terminus-10px
+  text-wrap: true
+  text-auto-resize: true
+  phantom: true
+  margin-left: 6
+
+MainWindow
+  id: editorWindow
+  !text: tr('StrmEd - Object Editor')
+  size: 500 440
+  @onEscape: modules.strmed_interface.hide()
+
+  Panel
+    id: widgetsPanel
+    anchors.top: parent.top
+    anchors.right: parent.right
+    anchors.left: parent.left
+    background: #00000048
+    border: 1 #00000099
+    height: 36
+    layout:
+      type: horizontalBox
+
+  Label
+    !text: tr('Editor Log:')
+    anchors.left: parent.left
+    anchors.bottom: next.top
+    margin-bottom: 4
+
+  ScrollablePanel
+    id: logBuffer
+    background: #00000066
+    focusable: false
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: seperator.top
+    height: 160
+    layout:
+      type: verticalBox
+      align-bottom: true
+    vertical-scrollbar: logScrollbar
+    inverted-scroll: true
+    margin: 4 12 10 0
+
+  VerticalScrollBar
+    id: logScrollbar
+    anchors.top: prev.top
+    anchors.bottom: prev.bottom
+    anchors.right: parent.right
+    anchors.left: prev.right
+    step: 48
+    pixels-scroll: true
+
+  HorizontalSeparator
+    id: seperator
+    anchors.left: parent.left
+    anchors.right: parent.right
+    anchors.bottom: next.top
+    margin: 6 2
+
+  Button
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    !text: tr('Hide')
+    !tooltip: tr('Hide [Escape]')
+    @onClick: modules.strmed_interface.hide()

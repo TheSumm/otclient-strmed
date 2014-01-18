@@ -1,0 +1,8 @@
+Module
+  name: strmed_spriteviewer
+  description: StrmEd spriteviewer
+  author: Summ
+  sandboxed: true
+  scripts: [ spriteviewer ]
+  @onLoad: init()
+  @onUnload: terminate()

@@ -1,0 +1,81 @@
+SpriteView < UIWidget
+  id: spriteView
+  anchors.left: parent.left
+  anchors.top: prev.bottom
+  margin: 8 10
+  layout: grid
+
+Sprite < UISprite
+  background: #ff00ff
+  $on:
+    background: alpha
+    
+ChangeViewButton < Button
+  margin-top: 5
+  width: 75
+
+MainWindow
+  id: spriteviewerWindow
+  !text: tr('StrmEd - Sprite Viewer')
+  size: 393 370
+  @onEscape: modules.strmed_spriteviewer.hide()
+
+  CheckBox
+    id: transparentCheckBox
+    !text: tr('Transparent')
+    anchors.top: parent.top
+    anchors.right: parent.right
+    size: 100 16
+
+  Label
+    !text: tr('Goto sprite:')
+    anchors.top: parent.top
+    anchors.left: parent.left
+    margin-top: 3
+    height: 20
+  
+  TextEdit
+    id: jumpOffsetText
+    anchors.left: prev.right
+    anchors.top: parent.top
+    margin-left: 5
+    focusable: false
+    @onClick: self:setFocusable(true) self:focus()
+    
+  Button
+    size: 40 20
+    !text: tr('Go')
+    anchors.top: parent.top
+    anchors.left: prev.right
+    @onClick: jumpOffset()
+
+  SpriteView
+  
+  ChangeViewButton 
+    id: buttonPrev
+    !text: tr('<< Prev')
+    anchors.top: spriteView.bottom
+    anchors.left: spriteView.left
+    
+  Label
+    id: spriteViewLabel
+    anchors.top: prev.top
+    anchors.left: prev.right
+    anchors.right: next.left
+    background: #ffffff11
+    border: 1 #00000099
+    text-align: center
+    color: white
+    height: 22
+    
+  ChangeViewButton
+    id: buttonNext
+    !text: tr('Next >>')
+    anchors.top: spriteView.bottom
+    anchors.right: spriteView.right
+
+  Button
+    anchors.right: parent.right
+    anchors.bottom: parent.bottom
+    !text: tr('Close')
+    @onClick: modules.strmed_spriteviewer.hide()

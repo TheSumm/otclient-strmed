@@ -1,0 +1,8 @@
+Module
+  name: strmed_interface
+  description: StrmEd interface
+  author: Summ
+  sandboxed: true
+  scripts: [ interface ]
+  @onLoad: init()
+  @onUnload: terminate()

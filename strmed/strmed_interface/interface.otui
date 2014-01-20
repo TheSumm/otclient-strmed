@@ -1,8 +1,7 @@
 WidgetButton < TopButton
   width: 25
   margin: 2 0
-  $first:
-    margin-left: 4
+  margin-left: 4
 
 LogLabel < UITextEdit
   font: terminus-10px

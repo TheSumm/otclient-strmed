@@ -84,7 +84,12 @@ function updateSpriteView()
     local spriteId = spriteViewOffset + i
     local spriteWidget = spriteView:getChildById(string.format('sprite%i', i))
     spriteWidget:setSpriteId(spriteId)
-    spriteWidget:setTooltip(string.format('SpriteId %i', spriteId))
+    if spriteWidget:hasSprite() then
+      spriteWidget:setBorderWidth(0)
+    else
+      spriteWidget:setBorderWidth(2)
+    end
+    spriteWidget:setTooltip(string.format('SpriteId: %i%s', spriteId, (not spriteWidget:hasSprite() and '\nNULL' or '')))
   end
 end
 

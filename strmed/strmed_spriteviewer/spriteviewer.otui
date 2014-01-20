@@ -7,6 +7,7 @@ SpriteView < UIWidget
 
 Sprite < UISprite
   background: #ff00ff
+  border-color: blue
   $on:
     background: alpha
 

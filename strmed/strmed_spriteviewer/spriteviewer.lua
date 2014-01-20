@@ -87,7 +87,7 @@ function updateSpriteView()
     if spriteWidget:hasSprite() then
       spriteWidget:setBorderWidth(0)
     else
-      spriteWidget:setBorderWidth(2)
+      spriteWidget:setBorderWidth(3)
     end
     spriteWidget:setTooltip(string.format('SpriteId: %i%s', spriteId, (not spriteWidget:hasSprite() and '\nNULL' or '')))
   end

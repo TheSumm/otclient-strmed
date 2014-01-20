@@ -76,6 +76,12 @@ MainWindow
     anchors.right: spriteView.right
 
   Button
+    !text: tr('Help Tooltip')
+    !tooltip: tr('Sprite Viewer is only used to determine sprite ids\nBlue bordered sprites do not exist and can be overwritten')
+    anchors.left: parent.left
+    anchors.bottom: parent.bottom
+
+  Button
     anchors.right: parent.right
     anchors.bottom: parent.bottom
     !text: tr('Close')
